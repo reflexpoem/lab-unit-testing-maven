@@ -15,8 +15,8 @@ public class SampleMethods {
    * @param temp The temperature in Celsius.
    * @return The temperature in Fahrenheit.
    */
-  public static int c2f(int temp) {
-    return (temp - 32) * (5 / 9);
+  public static float c2f(int temp) {
+    return temp * (9f/5f) + 32;
   } // c2f(int)
 
   /**
@@ -40,7 +40,7 @@ public class SampleMethods {
       return tmp * tmp;
     } else {
       // Recursive case: When p is odd, result is x*(x^(p-1))
-      return expt(x * x, (p - 1) / 2);
+      return x * expt(x, (p - 1));
     } // if p is odd.
   } // expt(int,int)
 
@@ -84,8 +84,8 @@ public class SampleMethods {
     String noAs = ""; // The string we're creating with no a's.
 
     for (int i = 0; i < str.length(); i++) {
-      if (str.charAt(i) == 'a') {
-        noAs += str.charAt(i++);
+      if (str.charAt(i) != 'a') {
+        noAs += str.charAt(i);
       } // if we see the a
     } // for each position
 
@@ -106,13 +106,14 @@ public class SampleMethods {
    */
   public static String removeBs(String str) {
     StringBuffer noBs = new StringBuffer(str);
-    for (int i = 0; i < str.length(); i++) {
+    for (int i = 0; i < noBs.length(); i++) {
       if (noBs.charAt(i) == 'b') {
         noBs.deleteCharAt(i);
+        i--;
       } // if the char at position i is a 'b'
     } // for each position in the string
 
-    return noBs.toString();
+    return noBs.toString(); 
   } // removeBs(String word)
 
   /**
@@ -123,13 +124,14 @@ public class SampleMethods {
    * @pre ints[0] + ints[1] + ... + ints[ints.length-1] < maxint
    * @post result = ints[0] + ints[1] + ... + ints[ints.length-1]
    */
-  public static int sum(int[] ints) {
-    int result = 0;
+  public static long sum(int[] ints) {
+    long result = 0;
 
     for (int i = 0; i < ints.length; i++) {
-      result += result + i;
+      result = result + ints[i];
     } // for
 
-    return result; } // result(int[])
+    return result; 
+  } // result(int[])
 
 } // class SampleMethods
