@@ -1,8 +1,8 @@
 package edu.grinnell.csc207.experiments;
 
-import edu.grinnell.csc207.util.SampleMethods;
-
 import java.io.PrintWriter;
+
+import edu.grinnell.csc207.util.SampleMethods;
 
 /**
  * A place to put experiments with our SampleMethods class.
@@ -16,7 +16,7 @@ public class SampleMethodsExperiments {
    */
   public static void main(String[] args) {
     PrintWriter pen = new PrintWriter(System.out, true);
-    removeAsExperiments(pen);
+    removeAsExperiments(pen);  
     pen.close();
   } // main()
 
